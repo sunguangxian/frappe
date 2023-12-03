@@ -86,7 +86,8 @@ def get_language(lang_list: list = None) -> str:
 	if preferred_language_cookie:
 		if preferred_language_cookie in lang_set:
 			return preferred_language_cookie
-
+			
+		language = get_lang_code(preferred_language_cookie)
 		parent_language = get_parent_language(language)
 		if parent_language in lang_set:
 			return parent_language
@@ -98,7 +99,6 @@ def get_language(lang_list: list = None) -> str:
 		if language in lang_set:
 			return language
 
-		language = get_lang_code(preferred_language_cookie)
 		parent_language = get_parent_language(language)
 		if parent_language in lang_set:
 			return parent_language
