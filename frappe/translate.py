@@ -115,6 +115,9 @@ def get_parent_language(lang: str) -> str:
 	        1. zh-TW -> zh
 	        2. sr-BA -> sr
 	"""
+	if lang is None:
+		return None
+		
 	is_language_variant = "-" in lang
 	if is_language_variant:
 		return lang[: lang.index("-")]
